@@ -41,10 +41,8 @@ public class TelefoneController {
 
         Pessoa pessoa = pessoaRepository.findById(pessoaid).get();
 
-        if(telefone != null && (telefone.getNumero() != null
-                && telefone.getNumero().isEmpty()) || telefone.getNumero() == null
-                && (telefone.getTipo() != null
-                && telefone.getTipo().isEmpty()) || telefone.getTipo() == null){
+        if(telefone != null && telefone.getNumero().isEmpty()
+                            || telefone.getTipo().isEmpty()){
 
             ModelAndView modelAndView = new ModelAndView("cadastro/telefones");
             modelAndView.addObject("pessoaObj", pessoa);
